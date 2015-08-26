@@ -1,0 +1,18 @@
+---
+- name: install package
+  yum: name="http://influxdb.s3.amazonaws.com/influxdb-{{ influxdb_version }}.x86_64.rpm" state=present
+  tags:
+    - influxdb
+
+- name: write configuration
+  template: src=influxdb.conf.j2 dest=/etc/opt/influxdb/influxdb.conf
+  notify:
+    - restart influxdb
+  tags:
+    - influxdb
+
+- name: setup as startup service
+  service: name=influxdb state=started enabled=yes
+  tags:
+    - influxdb
+
