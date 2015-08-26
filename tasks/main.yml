@@ -11,3 +11,8 @@
   tags:
     - influxdb
 
+- name: setup as startup service
+  service: name=influxdb state=started enabled=yes
+  tags:
+    - influxdb
+
