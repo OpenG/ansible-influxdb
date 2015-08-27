@@ -2,6 +2,7 @@
 galaxy_info:
   author: Kęstutis Triponis
   description: InfluxDB
+  company: OpenG (Atvira Karta, LLC)
   license: GPLv3
   min_ansible_version: 1.9
   platforms:
