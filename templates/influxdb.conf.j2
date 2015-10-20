@@ -125,7 +125,7 @@ reporting-disabled = false
 ###
 
 [[graphite]]
-  enabled = false
+  enabled = {{ influxdb_graphite_enabled|default(false)|lower }}
   # bind-address = ":2003"
   # protocol = "tcp"
   # consistency-level = "one"
